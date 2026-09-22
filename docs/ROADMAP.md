@@ -52,7 +52,7 @@
 ## M5：跨平台与发行
 
 - [x] Windows、Linux、macOS 路径与权限适配
-- [x] x64、arm64 原生构建矩阵（待 CI 首次远端验证）
+- [x] Linux x64/ARM64、macOS ARM64、Windows x64 原生构建矩阵
 - [x] GitHub Actions：check、build、test
 - [x] 安装脚本和校验和（待首次 GitHub Release 验证）
 - [ ] mooncakes.io 发布

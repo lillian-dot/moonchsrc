@@ -21,9 +21,6 @@ jobs:
           - name: Linux ARM64
             os: ubuntu-24.04-arm
             asset: moonchsrc-aarch64-linux
-          - name: macOS x64
-            os: macos-15-intel
-            asset: moonchsrc-x86_64-macos
           - name: macOS ARM64
             os: macos-15
             asset: moonchsrc-aarch64-macos

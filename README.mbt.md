@@ -32,7 +32,8 @@ irm https://raw.githubusercontent.com/trail-it/moonchsrc/main/scripts/install.ps
 ```
 
 安装器会下载当前 GitHub Release 中与平台匹配的原生程序，并使用
-`SHA256SUMS` 验证文件。也可以从源码运行或安装 Mooncakes 模块：
+`SHA256SUMS` 验证文件。目前提供 Linux x64/ARM64、macOS ARM64 和
+Windows x64 原生程序。也可以从源码运行或安装 Mooncakes 模块：
 
 ```bash
 moon add trail-it/moonchsrc

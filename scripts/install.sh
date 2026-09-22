@@ -20,6 +20,15 @@ case "$arch" in
   *) echo "moonchsrc: unsupported architecture: $arch" >&2; exit 1 ;;
 esac
 
+case "${platform}-${machine}" in
+  linux-x86_64|linux-aarch64|macos-aarch64) ;;
+  macos-x86_64)
+    echo "moonchsrc: MoonBit does not provide a native macOS x64 toolchain; use an Apple Silicon host" >&2
+    exit 1
+    ;;
+  *) echo "moonchsrc: unsupported platform: ${platform}-${machine}" >&2; exit 1 ;;
+esac
+
 asset="moonchsrc-${machine}-${platform}"
 if [ "$version" = "latest" ]; then
   base_url="https://github.com/${repo}/releases/latest/download"
