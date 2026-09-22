@@ -10,8 +10,10 @@ with a leading `v`.
 5. The Release workflow builds native binaries, publishes SHA-256 checksums,
    and creates the GitHub release.
 6. Test one installer against the release.
-7. Run `moon publish --frozen`, then verify the module is discoverable on
-   mooncakes.io.
+7. Run `moon publish`, then create a clean temporary module and verify
+   `moon add <module>@<version>` plus `moon check`. Do not pass `--frozen`:
+   publication validates an extracted package in a fresh directory where its
+   dependencies still need to be installed.
 
 Do not reuse or move a published tag. If a release needs correction, publish a
 new patch version.

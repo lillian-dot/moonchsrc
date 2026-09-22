@@ -4,6 +4,9 @@ MoonChsrc 是一个用 MoonBit 编写的跨工具链换源引擎与命令行工�
 [chsrc](https://github.com/RubyMetric/chsrc) 启发，但采用独立的 MoonBit
 数据模型与实现，不复制上游 C 源码。
 
+发布：[GitHub v0.1.0](https://github.com/trail-it/moonchsrc/releases/tag/v0.1.0) ·
+[Mooncakes `trail-it/moonchsrc`](https://mooncakes.io/docs/trail-it/moonchsrc)
+
 0.1.0 提供一个安全优先、可实际使用的首个版本：
 
 - 列出内置目标与镜像；

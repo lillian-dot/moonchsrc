@@ -54,8 +54,8 @@
 - [x] Windows、Linux、macOS 路径与权限适配
 - [x] Linux x64/ARM64、macOS ARM64、Windows x64 原生构建矩阵
 - [x] GitHub Actions：check、build、test
-- [x] 安装脚本和校验和（待首次 GitHub Release 验证）
-- [ ] mooncakes.io 发布
+- [x] 安装脚本、GitHub Release 和 SHA-256 校验和
+- [x] mooncakes.io 发布与全新项目安装验证
 
 ## M6：比赛与社区交付
 
