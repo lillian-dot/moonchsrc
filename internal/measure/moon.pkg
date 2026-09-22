@@ -1,0 +1,7 @@
+import {
+  "moonbitlang/async",
+  "moonbitlang/async/http",
+  "trail-it/moonchsrc",
+}
+
+supported_targets = "native"

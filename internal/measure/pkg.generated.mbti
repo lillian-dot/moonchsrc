@@ -1,0 +1,17 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "trail-it/moonchsrc/internal/measure"
+
+import {
+  "trail-it/moonchsrc",
+}
+
+// Values
+pub async fn target(StringView, timeout_ms? : Int) -> Array[@moonchsrc.Measurement]
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

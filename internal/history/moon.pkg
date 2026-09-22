@@ -1,0 +1,12 @@
+import {
+  "moonbitlang/async/fs",
+  "moonbitlang/core/env",
+  "moonbitlang/core/json",
+  "trail-it/moonchsrc",
+}
+
+import {
+  "moonbitlang/async",
+} for "test"
+
+supported_targets = "native"

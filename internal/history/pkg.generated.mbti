@@ -1,0 +1,29 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "trail-it/moonchsrc/internal/history"
+
+import {
+  "trail-it/moonchsrc",
+}
+
+// Values
+pub async fn append_default(@moonchsrc.Snapshot) -> String
+
+pub fn default_path() -> String
+
+pub async fn latest_default(StringView, @moonchsrc.Scope) -> @moonchsrc.Snapshot?
+
+pub fn latest_matching(ArrayView[@moonchsrc.Snapshot], StringView, @moonchsrc.Scope) -> @moonchsrc.Snapshot?
+
+pub async fn load(StringView) -> Array[@moonchsrc.Snapshot]
+
+pub async fn save(StringView, ArrayView[@moonchsrc.Snapshot]) -> Unit
+
+pub fn select_state_directory(String?, String?, String?) -> String
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

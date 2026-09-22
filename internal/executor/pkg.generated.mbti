@@ -1,0 +1,17 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "trail-it/moonchsrc/internal/executor"
+
+import {
+  "trail-it/moonchsrc",
+}
+
+// Values
+pub async fn execute(@moonchsrc.ChangePlan) -> Int
+
+// Errors
+
+// Types and methods
+
+// Type aliases
+
+// Traits

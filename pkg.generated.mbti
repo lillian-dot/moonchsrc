@@ -1,0 +1,196 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "trail-it/moonchsrc"
+
+import {
+  "moonbitlang/core/debug",
+  "moonbitlang/core/json",
+}
+
+// Values
+pub fn capture_command_value(StringView, Int, StringView) -> SavedValue
+
+pub fn capture_config_file(String) -> SavedValue
+
+pub fn capture_value(Int, StringView) -> SavedValue
+
+pub fn dispatch_cli(ArrayView[String]) -> CliAction
+
+pub fn fastest_reachable(ArrayView[Measurement]) -> Measurement?
+
+pub fn find_mirror(StringView) -> Mirror?
+
+pub fn find_target(StringView) -> Target?
+
+pub fn get_cargo_mirror_config(String) -> String? raise PlanError
+
+pub fn get_mooncakes_mirror_config(String) -> String? raise PlanError
+
+pub fn help_text() -> String
+
+pub fn mirrors() -> Array[Mirror]
+
+pub fn plan_change(StringView, StringView, scope? : Scope) -> ChangePlan raise PlanError
+
+pub fn plan_first(StringView, scope? : Scope) -> ChangePlan raise PlanError
+
+pub fn plan_get(StringView, scope? : Scope) -> ChangePlan raise PlanError
+
+pub fn plan_reset(StringView, scope? : Scope) -> ChangePlan raise PlanError
+
+pub fn plan_restore(Snapshot) -> ChangePlan raise PlanError
+
+pub fn rank_measurements(ArrayView[Measurement]) -> Array[Measurement]
+
+pub fn render_error(PlanError) -> String
+
+pub fn render_measurements(ArrayView[Measurement]) -> String
+
+pub fn render_mirrors() -> String
+
+pub fn render_target(StringView) -> String raise PlanError
+
+pub fn render_targets() -> String
+
+pub fn reset_cargo_mirror_config(String) -> String raise PlanError
+
+pub fn reset_mooncakes_mirror_config(String) -> String raise PlanError
+
+pub fn run_cli(ArrayView[String]) -> String
+
+pub fn set_cargo_mirror_config(String, String) -> String raise PlanError
+
+pub fn set_mooncakes_mirror_config(String, String, String, String) -> String raise PlanError
+
+pub fn targets() -> Array[Target]
+
+pub fn version() -> String
+
+// Errors
+pub(all) suberror PlanError {
+  UnknownTarget(String)
+  UnknownMirror(target~ : String, mirror~ : String)
+  InvalidScope(String)
+  UnsupportedScope(target~ : String, scope~ : Scope)
+  InvalidSnapshot(target~ : String, expected~ : Int, actual~ : Int)
+  SnapshotNotRestorable(String)
+  NoSelectableMirror(String)
+  ConfigConflict(path~ : String, detail~ : String)
+  UnsafeConfigValue(String)
+} derive(Eq, @debug.Debug)
+
+// Types and methods
+pub(all) enum Capability {
+  CanGet
+  CanSet
+  CanReset
+  CanMeasure
+} derive(Eq, @debug.Debug)
+pub fn Capability::to_text(Self) -> String
+
+pub(all) struct ChangePlan {
+  operation : Operation
+  target_id : String
+  mirror_id : String?
+  scope : Scope
+  commands : Array[Command]
+  file_steps : Array[FileStep]
+} derive(Eq, @debug.Debug)
+pub fn ChangePlan::to_text(Self) -> String
+
+pub(all) enum CliAction {
+  Show(String)
+  Execute(ChangePlan)
+  RestoreLatest(String, Scope, Bool)
+  MeasureTarget(String)
+  AutoSelect(String, Scope, Bool)
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Command {
+  program : String
+  args : Array[String]
+} derive(Eq, @debug.Debug)
+pub fn Command::to_text(Self) -> String
+
+pub(all) enum ConfigPath {
+  CargoProject
+  CargoUser
+  MoonUser
+} derive(Eq, @debug.Debug)
+pub fn ConfigPath::to_text(Self) -> String
+
+pub(all) enum FileOperation {
+  ReadCargoSource
+  SetCargoSource(String)
+  ResetCargoSource
+  RestoreContent(SavedValue)
+  ReadMooncakesSource
+  SetMooncakesSource(registry~ : String, index~ : String, symbols~ : String)
+  ResetMooncakesSource
+} derive(Eq, @debug.Debug)
+
+pub(all) struct FileStep {
+  path : ConfigPath
+  operation : FileOperation
+} derive(Eq, @debug.Debug)
+pub fn FileStep::to_text(Self) -> String
+
+pub(all) struct Measurement {
+  mirror_id : String
+  url : String
+  latency_ms : Int64?
+  http_status : Int?
+} derive(Eq, @debug.Debug)
+pub fn Measurement::is_reachable(Self) -> Bool
+
+pub(all) struct Mirror {
+  id : String
+  name : String
+} derive(Eq, @debug.Debug)
+
+pub(all) enum Operation {
+  GetSource
+  SetSource
+  ResetSource
+  RestoreSource
+} derive(Eq, @debug.Debug)
+pub fn Operation::to_text(Self) -> String
+
+pub(all) enum SavedValue {
+  Present(String)
+  Missing
+  Redacted
+} derive(Eq, ToJson, @debug.Debug, @json.FromJson)
+
+pub(all) enum Scope {
+  Project
+  User
+  System
+} derive(Eq, ToJson, @debug.Debug, @json.FromJson)
+pub fn Scope::parse(StringView) -> Self?
+pub fn Scope::to_text(Self) -> String
+
+pub(all) struct Snapshot {
+  target_id : String
+  scope : Scope
+  values : Array[SavedValue]
+  captured_at : UInt64
+} derive(Eq, ToJson, @debug.Debug, @json.FromJson)
+pub fn Snapshot::is_restorable(Self) -> Bool
+
+pub(all) struct Source {
+  mirror_id : String
+  url : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Target {
+  id : String
+  name : String
+  aliases : Array[String]
+  scopes : Array[Scope]
+  capabilities : Array[Capability]
+  sources : Array[Source]
+} derive(Eq, @debug.Debug)
+
+// Type aliases
+
+// Traits
