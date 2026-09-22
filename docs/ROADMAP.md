@@ -51,9 +51,9 @@
 
 ## M5：跨平台与发行
 
-- [x] Windows、Linux、macOS 路径与权限适配（待 CI 首次远端验证）
+- [x] Windows、Linux、macOS 路径与权限适配
 - [x] x64、arm64 原生构建矩阵（待 CI 首次远端验证）
-- [x] GitHub Actions：check、build、test（待首次远端运行验证）
+- [x] GitHub Actions：check、build、test
 - [x] 安装脚本和校验和（待首次 GitHub Release 验证）
 - [ ] mooncakes.io 发布
 
@@ -62,7 +62,7 @@
 - [x] 架构、recipe 编写和贡献文档
 - [x] 上游来源、许可证和独立实现边界说明
 - [ ] 可运行演示与终端录屏
-- [ ] GitHub / Gitlink 同步
+- [ ] GitHub 已同步，Gitlink 待提交
 - [ ] 一页项目申报书与最终验收清单
 
 ## 当前质量门
