@@ -10,7 +10,7 @@ MoonChsrc 是一个用 MoonBit 编写的跨工具链换源引擎与命令行工�
 0.1.0 提供一个安全优先、可实际使用的首个版本：
 
 - 列出内置目标与镜像；
-- 支持 npm、pnpm、Yarn 2+、Node 聚合目标、pip、Go modules、Composer、Cargo、RubyGems 和 mooncakes；
+- 支持 npm、pnpm、Yarn 2+、Node 聚合目标、pip、Go modules、Composer、Cargo、RubyGems、mooncakes 和 Flathub；
 - 为 project、user、system 三种作用域生成明确的换源命令；
 - `set --dry-run` 只预览，不改写用户配置；
 - `set` 通过原生进程 API 直接执行，不使用 shell 字符串拼接；
@@ -57,6 +57,7 @@ moon run cmd/main -- set --dry-run pip first project
 moon run cmd/main -- set --dry-run cargo rsproxy user
 moon run cmd/main -- set --dry-run moonbit ustc user
 moon run cmd/main -- set --dry-run rubygems rubychina user
+moon run cmd/main -- set --dry-run flatpak ustc user
 moon run cmd/main -- set npm npmmirror user
 moon run cmd/main -- reset npm user
 moon run cmd/main -- restore --dry-run npm user

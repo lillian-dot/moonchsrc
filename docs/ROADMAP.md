@@ -36,6 +36,7 @@
 - [x] RubyGems（Bundler 待实现）
 - [x] Composer
 - [ ] Docker / Homebrew
+- [x] Flatpak / Flathub
 
 完成标准：每个 recipe 至少支持 get/set/reset、官方源、一个国内镜像和核心测试。
 

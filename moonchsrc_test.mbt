@@ -417,3 +417,36 @@ test "RubyGems set replaces the complete source list" {
     "gem sources --add https://gems.ruby-china.com/ --force",
   )
 }
+
+///|
+test "Flatpak recipe preserves user and system installation scopes" {
+  let user_plan = @moonchsrc.plan_change("flatpak", "ustc")
+  assert_eq(user_plan.target_id, "flathub")
+  assert_eq(
+    user_plan.commands[0].to_text(),
+    "flatpak --user remote-modify --url=https://mirrors.ustc.edu.cn/flathub flathub",
+  )
+  let system_plan = @moonchsrc.plan_get("flathub", scope=System)
+  assert_eq(
+    system_plan.commands[0].to_text(),
+    "flatpak --system remotes --columns=name,url",
+  )
+}
+
+///|
+test "Flatpak output captures only the Flathub remote" {
+  let captured = @moonchsrc.capture_command_value(
+    "flathub", 0, "fedora\thttps://registry.fedoraproject.org/\nflathub\thttps://mirror.example/flathub\nflathub-beta\thttps://flathub.org/beta-repo/\n",
+  )
+  assert_eq(captured, Present("https://mirror.example/flathub"))
+  let restored = @moonchsrc.plan_restore({
+    target_id: "flathub",
+    scope: User,
+    values: [captured],
+    captured_at: 9,
+  })
+  assert_eq(
+    restored.commands[0].to_text(),
+    "flatpak --user remote-modify --url=https://mirror.example/flathub flathub",
+  )
+}

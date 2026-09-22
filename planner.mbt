@@ -333,6 +333,51 @@ fn rubygems_restore_commands(
 }
 
 ///|
+fn flatpak_scope_flag(scope : Scope) -> String {
+  match scope {
+    User => "--user"
+    System => "--system"
+    Project => "--user"
+  }
+}
+
+///|
+fn flatpak_command(source : Source, scope : Scope) -> Command {
+  {
+    program: "flatpak",
+    args: [
+      flatpak_scope_flag(scope),
+      "remote-modify",
+      "--url=\{source.url}",
+      "flathub",
+    ],
+  }
+}
+
+///|
+fn flatpak_get_command(scope : Scope) -> Command {
+  {
+    program: "flatpak",
+    args: [flatpak_scope_flag(scope), "remotes", "--columns=name,url"],
+  }
+}
+
+///|
+fn flatpak_restore_command(
+  value : SavedValue,
+  scope : Scope,
+) -> Command raise PlanError {
+  match require_saved_value("flathub", value) {
+    Some(url) => flatpak_command({ mirror_id: "history", url, }, scope)
+    None =>
+      {
+        program: "flatpak",
+        args: [flatpak_scope_flag(scope), "remote-delete", "--force", "flathub"],
+      }
+  }
+}
+
+///|
 fn require_snapshot_size(
   target : String,
   values : ArrayView[SavedValue],

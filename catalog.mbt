@@ -10,6 +10,7 @@ pub fn mirrors() -> Array[Mirror] {
     { id: "aliyun", name: "Alibaba Cloud Mirrors", },
     { id: "rsproxy", name: "RsProxy", },
     { id: "rubychina", name: "Ruby China", },
+    { id: "sjtug", name: "Shanghai Jiao Tong University Mirrors", },
   ]
 }
 

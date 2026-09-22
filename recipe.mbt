@@ -284,6 +284,33 @@ fn recipes() -> Array[Recipe] {
       get_file_steps: no_get_file_steps,
       restore_file_steps: no_restore_file_steps,
     },
+    {
+      target: {
+        id: "flathub",
+        name: "Flathub Flatpak remote",
+        aliases: ["flatpak"],
+        scopes: [User, System],
+        capabilities: [CanGet, CanSet, CanReset, CanMeasure],
+        sources: [
+          { mirror_id: "official", url: "https://dl.flathub.org/repo", },
+          { mirror_id: "ustc", url: "https://mirrors.ustc.edu.cn/flathub", },
+          {
+            mirror_id: "sjtug",
+            url: "https://mirrors.sjtug.sjtu.edu.cn/flathub",
+          },
+        ],
+      },
+      set_commands: (source, scope) => [flatpak_command(source, scope)],
+      get_commands: scope => [flatpak_get_command(scope)],
+      restore_commands: (values, scope) => {
+        require_snapshot_size("flathub", values, 1)
+        [flatpak_restore_command(values[0], scope)]
+      },
+      capture_command: capture_flathub_url,
+      set_file_steps: no_set_file_steps,
+      get_file_steps: no_get_file_steps,
+      restore_file_steps: no_restore_file_steps,
+    },
   ]
 }
 

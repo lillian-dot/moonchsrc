@@ -3,6 +3,13 @@
 All notable changes to MoonChsrc are documented here. The project follows
 [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Added
+
+- Flathub/Flatpak recipe with user and system scopes, USTC and SJTUG mirrors,
+  and snapshot restoration.
+
 ## 0.1.0 - 2026-09-23
 
 ### Added
