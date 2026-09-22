@@ -4,6 +4,15 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to build and publish
+        required: true
+        type: string
+
+env:
+  RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
 
 permissions:
   contents: read
@@ -31,6 +40,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
+        with:
+          ref: ${{ env.RELEASE_TAG }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
@@ -62,7 +73,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p dist
-          cp _build/native/release/build/cmd/main/main "dist/${{ matrix.asset }}"
+          cp _build/native/release/build/cmd/main/main.exe "dist/${{ matrix.asset }}"
           chmod 0755 "dist/${{ matrix.asset }}"
 
       - name: Stage Windows binary
@@ -102,8 +113,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" dist/* \
+          gh release create "$RELEASE_TAG" dist/* \
             --repo "$GITHUB_REPOSITORY" \
             --verify-tag \
             --generate-notes \
-            --title "MoonChsrc $GITHUB_REF_NAME"
+            --title "MoonChsrc $RELEASE_TAG"
