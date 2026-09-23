@@ -89,6 +89,7 @@ test "build a source-change plan" {
 ## 路线图
 
 完整里程碑、完成标准和质量门见 [docs/ROADMAP.md](docs/ROADMAP.md)。
+一页项目说明见 [docs/PROJECT_BRIEF.md](docs/PROJECT_BRIEF.md)。
 架构和 recipe 扩展说明见 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)。
 参与开发请见 [CONTRIBUTING.md](CONTRIBUTING.md)，recipe 编写清单见
 [docs/RECIPES.md](docs/RECIPES.md)。
