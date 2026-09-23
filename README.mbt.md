@@ -65,6 +65,16 @@ moon run cmd/main -- restore npm user
 moon run cmd/main -- measure npm
 ```
 
+在 Linux/macOS 上可运行隔离的真实写入与恢复演示（需要 `moon` 和 `npm`）：
+
+```bash
+sh scripts/demo-isolated-npm.sh
+```
+
+脚本在仓库内创建临时目录，单独指定 npm 用户配置和 MoonChsrc 历史目录，
+依次验证 dry-run 不修改配置、实际换源、`get` 与 `restore`；结束时清理临时目录。
+它不会改写日常使用的 npm 用户配置。
+
 ## MoonBit API
 
 ```mbt check
