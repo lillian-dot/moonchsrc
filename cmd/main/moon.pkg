@@ -2,10 +2,10 @@ import {
   "moonbitlang/async",
   "moonbitlang/core/env",
   "moonbitlang/x/sys",
-  "trail-it/moonchsrc",
-  "trail-it/moonchsrc/internal/executor",
-  "trail-it/moonchsrc/internal/history",
-  "trail-it/moonchsrc/internal/measure",
+  "lillian-dot/moonchsrc",
+  "lillian-dot/moonchsrc/internal/executor",
+  "lillian-dot/moonchsrc/internal/history",
+  "lillian-dot/moonchsrc/internal/measure",
 }
 
 pkgtype(kind: "executable")

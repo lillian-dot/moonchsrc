@@ -3,8 +3,8 @@ import {
   "moonbitlang/async/fs",
   "moonbitlang/async/stdio",
   "moonbitlang/core/env",
-  "trail-it/moonchsrc",
-  "trail-it/moonchsrc/internal/history",
+  "lillian-dot/moonchsrc",
+  "lillian-dot/moonchsrc/internal/history",
 }
 
 supported_targets = "native"

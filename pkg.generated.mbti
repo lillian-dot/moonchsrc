@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "trail-it/moonchsrc"
+package "lillian-dot/moonchsrc"
 
 import {
   "moonbitlang/core/debug",

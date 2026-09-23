@@ -1,8 +1,8 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "trail-it/moonchsrc/internal/history"
+package "lillian-dot/moonchsrc/internal/history"
 
 import {
-  "trail-it/moonchsrc",
+  "lillian-dot/moonchsrc",
 }
 
 // Values

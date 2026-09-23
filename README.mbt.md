@@ -4,10 +4,10 @@ MoonChsrc 是一个用 MoonBit 编写的跨工具链换源引擎与命令行工�
 [chsrc](https://github.com/RubyMetric/chsrc) 启发，但采用独立的 MoonBit
 数据模型与实现，不复制上游 C 源码。
 
-发布：[GitHub v0.1.0](https://github.com/trail-it/moonchsrc/releases/tag/v0.1.0) ·
-[Mooncakes `trail-it/moonchsrc`](https://mooncakes.io/docs/trail-it/moonchsrc)
+发布：[GitHub v0.2.0](https://github.com/lillian-dot/moonchsrc/releases/tag/v0.2.0) ·
+[Mooncakes `lillian-dot/moonchsrc`](https://mooncakes.io/docs/lillian-dot/moonchsrc)
 
-0.1.0 提供一个安全优先、可实际使用的首个版本：
+0.2.0 提供一个安全优先、可实际使用的版本：
 
 - 列出内置目标与镜像；
 - 支持 npm、pnpm、Yarn 2+、Node 聚合目标、pip、Go modules、Composer、Cargo、RubyGems、mooncakes 和 Flathub；
@@ -25,13 +25,13 @@ MoonChsrc 是一个用 MoonBit 编写的跨工具链换源引擎与命令行工�
 Linux / macOS：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/trail-it/moonchsrc/main/scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/lillian-dot/moonchsrc/main/scripts/install.sh | sh
 ```
 
 Windows PowerShell：
 
 ```powershell
-irm https://raw.githubusercontent.com/trail-it/moonchsrc/main/scripts/install.ps1 | iex
+irm https://raw.githubusercontent.com/lillian-dot/moonchsrc/main/scripts/install.ps1 | iex
 ```
 
 安装器会下载当前 GitHub Release 中与平台匹配的原生程序，并使用
@@ -39,7 +39,7 @@ irm https://raw.githubusercontent.com/trail-it/moonchsrc/main/scripts/install.ps
 Windows x64 原生程序。也可以从源码运行或安装 Mooncakes 模块：
 
 ```bash
-moon add trail-it/moonchsrc
+moon add lillian-dot/moonchsrc
 ```
 
 ## 运行

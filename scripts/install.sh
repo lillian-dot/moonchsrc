@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-repo="trail-it/moonchsrc"
+repo="lillian-dot/moonchsrc"
 version="${MOONCHSRC_VERSION:-latest}"
 install_dir="${MOONCHSRC_INSTALL_DIR:-${HOME}/.local/bin}"
 

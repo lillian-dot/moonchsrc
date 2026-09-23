@@ -4,7 +4,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$repo = "trail-it/moonchsrc"
+$repo = "lillian-dot/moonchsrc"
 $architecture = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString()
 
 if ($architecture -ne "X64") {

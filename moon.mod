@@ -9,13 +9,13 @@
 //   "moonbitlang/x@0.4.6",
 // }
 
-name = "trail-it/moonchsrc"
+name = "lillian-dot/moonchsrc"
 
-version = "0.2.0-dev"
+version = "0.2.0"
 
 readme = "README.mbt.md"
 
-repository = "https://github.com/trail-it/moonchsrc"
+repository = "https://github.com/lillian-dot/moonchsrc"
 
 license = "Apache-2.0"
 

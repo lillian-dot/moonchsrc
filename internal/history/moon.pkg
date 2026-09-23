@@ -2,7 +2,7 @@ import {
   "moonbitlang/async/fs",
   "moonbitlang/core/env",
   "moonbitlang/core/json",
-  "trail-it/moonchsrc",
+  "lillian-dot/moonchsrc",
 }
 
 import {
