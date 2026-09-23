@@ -3,5 +3,5 @@
 ///
 /// Return the released MoonChsrc version.
 pub fn version() -> String {
-  "0.2.0-dev"
+  "0.2.1"
 }

@@ -3,6 +3,18 @@
 All notable changes to MoonChsrc are documented here. The project follows
 [Semantic Versioning](https://semver.org/).
 
+## 0.2.1 - 2026-09-23
+
+### Added
+
+- Isolated npm source-switching demo that verifies preview, actual mutation,
+  query, and restoration without touching the user's npm configuration.
+- Technical project overview and updated acceptance roadmap.
+
+### Fixed
+
+- CLI version now reports the published version instead of a development suffix.
+
 ## 0.2.0 - 2026-09-23
 
 ### Added

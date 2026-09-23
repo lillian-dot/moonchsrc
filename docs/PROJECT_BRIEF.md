@@ -1,4 +1,6 @@
-# MoonChsrc：MoonBit 原生开发工具换源器
+# MoonChsrc 技术概览
+
+此文档供了解项目现状，不是参赛申报书。
 
 ## 项目定位
 
